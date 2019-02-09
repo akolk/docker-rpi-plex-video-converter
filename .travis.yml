@@ -10,7 +10,7 @@ before_install:
     - sudo apt install -y qemu qemu-user-static qemu-user binfmt-support
 
 script:
-    - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_LOGIN" --password-stdin
+    - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
     - make build
 
 deploy:
