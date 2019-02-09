@@ -12,10 +12,10 @@ qemu-arm-static:
 build: qemu-aarch64-static qemu-arm-static
 	$(foreach arch,$(archs), \
 		cat Dockerfile | sed "s/FROM debian:stable-slim/FROM ${arch}\/debian:stable-slim/g" > .Dockerfile; \
-		docker build -t jaymoulin/rpi-plex-video-converter:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
+		docker build -t akolk/rpi-plex-video-converter:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
 	)
 publish:
-	docker push jaymoulin/rpi-plex-video-converter
+	docker push akolk/rpi-plex-video-converter
 	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest.yaml
 	cat manifest.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}/g" > manifest2.yaml
 	mv manifest2.yaml manifest.yaml
