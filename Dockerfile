@@ -1,11 +1,10 @@
 FROM debian:stable-slim as builder
 
-COPY qemu-arm-static /usr/bin/
-COPY qemu-aarch64-static /usr/bin/
+COPY .blank tmp/qemu-$ARCH-static* /usr/bin
 
 FROM builder
 
-LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <https://twitter.com/MoulinJay>"
+LABEL maintainer="Anjo Kolk"
 
 RUN apt-get update && apt-get install libav-tools -y --force-yes
 
