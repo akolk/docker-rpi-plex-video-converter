@@ -17,7 +17,6 @@ env:
     - TARGET=arm32v7 ARCH=arm TAG=arm GRAFANA_ARCH=armv7
 
 script:
-  - chmod 777 ./travis-build.sh
   - ./travis-build.sh
   - >
     if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_PULL_REQUEST" == "false" ]; then
