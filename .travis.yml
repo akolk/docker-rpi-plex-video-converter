@@ -24,12 +24,7 @@ script:
       docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
       docker push "$IMAGE":"$VERSION"-"$TAG"
     fi
-deploy:
-    provider: script
-    script:
-        - make publish latest
-    on:
-        branch: master
+
 jobs:
   include:
     - stage: deploy
