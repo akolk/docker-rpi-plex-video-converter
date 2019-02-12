@@ -1,3 +1,9 @@
+ARG target=arm64v8
+ARG arch=aarch64
+ENV ARCH=$arch
+ARG tag
+ENV TAG=$tag
+
 FROM $target/debian:9.3-slim as builder
 #FROM debian:stable-slim as builder
 
