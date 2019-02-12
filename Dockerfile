@@ -1,11 +1,8 @@
 ARG target=arm64v8
+FROM $target/debian:9.3-slim
+
 ARG arch=aarch64
 ENV ARCH=$arch
-ARG tag
-ENV TAG=$tag
-
-FROM $target/debian:9.3-slim 
-#FROM debian:stable-slim as builder
 
 COPY .blank tmp/qemu-$ARCH-static* /usr/bin
 
