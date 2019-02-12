@@ -4,12 +4,10 @@ ENV ARCH=$arch
 ARG tag
 ENV TAG=$tag
 
-FROM $target/debian:9.3-slim as builder
+FROM $target/debian:9.3-slim 
 #FROM debian:stable-slim as builder
 
 COPY .blank tmp/qemu-$ARCH-static* /usr/bin
-
-FROM builder
 
 LABEL maintainer="Anjo Kolk"
 
