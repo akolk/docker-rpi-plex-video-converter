@@ -4,7 +4,7 @@ FROM $target/debian:9.3-slim
 ARG arch=aarch64
 ENV ARCH=$arch
 
-COPY .blank tmp/qemu-$ARCH-static* /usr/bin
+COPY .blank tmp/qemu-$ARCH-static* /usr/bin/
 
 LABEL maintainer="Anjo Kolk"
 
