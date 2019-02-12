@@ -14,7 +14,7 @@ This image purpose is to convert unsupported video files by Plex for Raspberry t
 Just run the container to convert all videos files to convert recursively on your `media` volume :
 
 ```
-docker run --rm -t -v /path/to/your/media/folder:/media jaymoulin/rpi-plex-video-converter
+docker run --rm -t -v "/mnt/series/True Detective":/media akolk/rpi-plex-video-converter
 ```
 This image is multiarch, which means it works either on your PC or Raspberry PI
 
